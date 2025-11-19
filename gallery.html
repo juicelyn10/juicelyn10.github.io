@@ -1,23 +1,17 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="icon.png" type="image/x-icon">
   <title>gallery</title>
-  <link rel="stylesheet" href="css/#style.css">
-  <script src="it js/vid.js"></script>
-</head>
-<body>
-<style>
-  
-/* Reset margin and padding */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  <link rel="stylesheet" href="css/midterm.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-/* Fullscreen background video */
-#urvid {
+  <style>
+
+   #urvid {
   position: fixed;
   right: 0;
   bottom: 0;
@@ -25,21 +19,63 @@
   min-height: 100%;
   z-index: -1;
   object-fit: cover;
-}
+    }
+   body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f5f7fa;
+      color: #333;
+      scroll-behavior: smooth;
+   }
+    header {
 
+      background: #1e1e2f;
+      padding:25px 0;
+      position:sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .content {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      max-width: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      color: #f1f1f1;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: justify;
+    }
 
-/* Title styling */
+    #pause_button {
+      width: 200px;
+      font-size: 18px;
+      padding: 10px;
+      border: none;
+      background: #000;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+    #pause_button:hover {
+      background: #ddd;
+      color: #000;
+    }
+* Title styling */
 .title-content {
-  text-align: center;
+  text-align:right;
   margin-top: 50px;
 }
 
 .title {
   font-size: 60px;
   font-family: Arial, sans-serif;
-  color: white;
-  text-shadow: 2px 2px 8px black;
+  color:  #1e1e2f;
+  text-shadow: 2px 2px 8px rgb(71, 110, 227);
   letter-spacing: 5px;
+  text-align: center;
 }
 
 /* Content section (marquee) */
@@ -66,57 +102,63 @@
 
 /* Button styling */
 .button-container {
-  text-align: center;
+  text-align:center;
   margin: 20px;
 }
 
-button {
-  background-color: #04AA6D;
-  border: none;
-  color: white;
-  padding: 12px 24px;
-  font-size: 18px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
+    .scroll-container {
+      margin-top: 15px;
+      background-color: transparent;
+      overflow-x: auto;
+      white-space: nowrap;
+      padding: 5px;
+
+    }
+    .scroll-container img {
+      display: inline-block;
+      margin-right: 10px;
+      border-radius: 8px;
+    }
+    .container { width: 90%; max-width: 1100px; margin: auto; }
+    .logo { color: #fff; font-size: 1.8rem; margin: 0; }
+    nav { float: right; }
+    nav a {
+      color: #fff;
+      margin-left: 25px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+  </style>
+</head>
+<body>
+
+    <header>
+  <div class="container">
+    <h1 class="logo">My Gallery</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="Gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+
+</header>
 
 
-button:hover {
-  background-color: #028a57;
-}
-
-/* Home link */
-a {
-  display: inline-block;
-  margin: 20px;
-  font-size: 18px;
-  color: white;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 10px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background 0.3s;
-}
-
-
-a:hover {
-  background: #04AA6D;
-}
-
- </style>
-  <!-- Background Video -->
   <video autoplay muted loop id="urvid">
-    <source src="img/vi.mp4" type="video/mp4">
-  </video>
+    <source src="video.mp4" type="video/mp4">
 
+  </video>
+  <br><br>
+  <br>
+  <br>
   <div class="title-content">
           <h1 class="title">My Gallery</h1>
   </div>
   
- 
-
- 
 
   <!-- Marquee Slideshow -->
   <div class="content">
@@ -134,8 +176,24 @@ a:hover {
       <img src="img/img1.jpg" height="200">
     </marquee>
   </div>
- <a href="index.html">Home</a>
 
- 
+    </div>
+  </div>
+
+  <script src="js/myvid.js"></script><script>
+    function myFunction() {
+  let video = document.getElementById("urvid");
+  let btn = document.getElementById("pause_button");
+
+  if (video.paused) {
+    video.play();
+    btn.innerText = "Pause";
+  } else {
+    video.pause();
+    btn.innerText = "Play";
+      }
+
+    }
+  </script>
 </body>
 </html>
