@@ -1,0 +1,806 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="icon.png" type="image/x-icon">
+  <title>portfolio</title>
+  <link rel="stylesheet" href="css/midterm.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+
+   #urvid {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  object-fit: cover;
+    }
+   body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f5f7fa;
+      color: #333;
+      scroll-behavior: smooth;
+   }
+    header {
+
+      background: #1e1e2f;
+      padding:25px 0;
+      position:sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .content {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      max-width: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      color: #f1f1f1;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: justify;
+    }
+
+    #pause_button {
+      width: 200px;
+      font-size: 18px;
+      padding: 10px;
+      border: none;
+      background: #000;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+    #pause_button:hover {
+      background: #ddd;
+      color: #000;
+    }
+* Title styling */
+.title-content {
+  text-align:right;
+  margin-top: 50px;
+}
+
+.title {
+  font-size: 60px;
+  font-family: Arial, sans-serif;
+  color:  #1e1e2f;
+  text-shadow: 2px 2px 8px rgb(71, 110, 227);
+  letter-spacing: 5px;
+  text-align: center;
+}
+
+/* Content section (marquee) */
+.content {
+
+  margin: 40px auto;
+  width: 90%;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.content img {
+  border-radius: 10px;
+  margin: 0 10px;
+  box-shadow: 2px 2px 10px black;
+  transition: transform 0.3s;
+}
+
+.content img:hover {
+  transform: scale(1.1);
+}
+
+/* Button styling */
+.button-container {
+  text-align:center;
+  margin: 20px;
+}
+
+    .scroll-container {
+      margin-top: 15px;
+      background-color: transparent;
+      overflow-x: auto;
+      white-space: nowrap;
+      padding: 5px;
+
+    }
+    .scroll-container img {
+      display: inline-block;
+      margin-right: 10px;
+      border-radius: 8px;
+    }
+    .container { width: 90%; max-width: 1100px; margin: auto; }
+    .logo { color: #fff; font-size: 1.8rem; margin: 0; }
+    nav { float: right; }
+    nav a {
+      color: #fff;
+      margin-left: 25px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+        .about-img img {
+      margin: 0 0 20px 0;
+    }
+  
+    footer {
+      text-align: center;
+      color: #ffffff;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+    img {
+  display: block;
+  margin: 0 auto 20px auto;
+  border-radius: 10px;
+}
+
+  .about-container {
+    max-width: 900px;
+    margin: 80px auto;
+    display: flex;
+    align-items: center;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    background-color: #f3f9ff;
+    border-left: 5px solid #007bff;
+  }
+
+  .about-img img {
+    width: 0px;
+    height: 0px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-right: 50px;
+  }
+
+  .about-text h1 {
+    color: #d4a017;  /* gold title */
+
+    font-size: 32px;
+    margin-bottom: 5px;
+  }
+
+  .about-text h3 {
+    color: #111;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  .about-text p {
+    color: #444;
+    line-height: 1.7;
+    text-align: justify;
+  }
+
+  @media (max-width: 768px) {}
+    .about-container {
+      flex-direction: column;
+      text-align: center;
+      padding: 25px;
+    }
+    
+.section-info ul {
+    list-style: none; /* Remove default bullets */
+    padding-left: 0;
+}
+
+.section-info ul li {
+    padding: 5px 0;
+    border-bottom: 1px dotted #e0e0e0;
+}
+
+.section-info ul li:last-child {
+    border-bottom: none;
+}
+.description-prompt {
+    font-style: italic;
+    color: #888;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed #ddd;
+    padding-bottom: 5px;
+}
+
+/* --- List Styling for Info Section --- */
+.section-info h3 {
+
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.section-info ul {
+    list-style: none; /* Remove default bullets */
+    padding-left: 0;
+}
+
+.section-info ul li {
+    padding: 5px 0;
+    border-bottom: 1px dotted #e0e0e0;
+}
+
+/* --- Image Section Styling --- */
+.image-placeholder {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.image-placeholder img {
+    width: 200px; /* Standard size for a professional profile image */
+    height: 200px;
+    border-radius: 50%; /* Circular image */
+    object-fit: cover;
+    border: 5px solid #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.image-placeholder p {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 10px;
+
+}
+
+/* --- Content Boxes (Introduction & Info) --- */
+.content-box {
+    background-color: #f3f9ff;
+    border-left: 5px solid #007bff;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+/* --- Section Headings --- */
+section h2 {
+    color: #007bff;
+    margin-top: 30px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+
+}
+
+.portfolio-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.page-header h1 {
+    color: #0056b3;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #0056b3;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: #e01f1f;
+}
+    .card {
+        width: 320px;
+        background: white;
+        border-radius: 16px;
+        overflow: hidden;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        margin-bottom: 20px;
+    }
+  
+    .card-header {
+        padding: 90px 20px;
+        background: linear-gradient(135deg, #a8e063, #56ab2f);
+        text-align: center;
+    }
+  
+    .card-body {
+        padding: 20px;
+    }
+  
+    .category {
+        color: #7fbf7f;
+        font-size: 14px;
+        font-weight: bold;
+    }
+    .title {
+        font-size: 22px;
+        font-weight: bold;
+        color: #222;
+        margin: 5px 0;
+    }
+  
+    .desc {
+        font-size: 14px;
+        color: #444;
+    }
+  
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        font-size: 14px;
+        color: #444;
+    }
+  
+    .view-btn {
+        color: #4CAF50;
+        font-weight: bold
+          
+    }
+  
+    /* CALCULATOR */
+    #calculator {
+        width: 300px;
+        margin-top: 20px;
+        padding: 20px;
+        background: #222;
+        border-radius: 16px;
+        display: none; /* hidden first */
+    }
+  
+    #display {
+        width: 100%;
+        height: 60px;
+        background: #cce8cc;
+        color: black;
+        font-size: 32px;
+        text-align: right;
+        padding: 10px;     
+        border-radius: 8px;
+        margin-bottom: 15px;
+        border: none;
+    }
+  
+    .buttons {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+    }
+  
+    .btn {
+        padding: 20px;
+        font-size: 20px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        background: #555;
+        color: white;
+    }
+    .btn.op { background: #3bc2d3; }
+    .btn.eq { background: #ff5b5b; }
+
+    .card {
+        width: 100%;
+        max-width: 320px;
+        background: white;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        margin-bottom: 30px;
+        transition: transform 0.3s ease;
+    }
+    
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+    .card-header {
+        padding: 80px 20px;
+        background: linear-gradient(135deg, #a8e063, #56ab2f);
+        text-align: center;
+        font-size: 50px;
+    }
+
+    .card-body {
+        padding: 20px;
+    }
+
+    .category {
+        color: #56ab2f;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+
+    .title {
+        font-size: 24px;
+        font-weight: 800;
+
+        color: #222;
+        margin: 5px 0 10px 0;
+    }
+
+    .desc {
+        font-size: 15px;
+        color: #444;
+    }
+
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        font-size: 14px;
+        color: #6b7280;
+    }
+
+    .view-btn {
+        color: #4CAF50;
+        font-weight: bold;
+        cursor: pointer;
+        text-decoration: none;
+
+        transition: color 0.2s ease;
+    }
+    .view-btn:hover {
+        color: #388e3c;
+    }
+
+    /* CALCULATOR STYLING */
+    #calculator {
+        width: 100%;
+        max-width: 340px;
+        padding: 20px;
+        background: #1f2937; /* Dark background */
+        border-radius: 16px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        display: none; /* hidden first, managed by JS */
+    }
+
+    #display {
+        width: 100%;
+
+        height: 70px;
+        background: #e5e7eb; /* Light grey display */
+        color: #1f2937;
+        font-size: 36px;
+        text-align: right;
+        padding: 15px 10px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        border: 2px solid #374151;
+        box-sizing: border-box;
+        font-weight: 600;
+        overflow: hidden;
+    }
+
+    .buttons {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+    }
+
+    .btn {
+
+        padding: 20px 0;
+        font-size: 22px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        font-weight: 600;
+        box-shadow: 0 4px 0 #111827;
+        color: white;
+    }
+
+    .btn:active {
+        transform: translateY(2px);
+        box-shadow: 0 2px 0 #111827;
+    }
+    
+    /* Number and Decimal buttons */
+    .btn.num {
+        background: #4b5563; /* Grey */
+        color: #f3f4f6;
+    }
+    .btn.num:hover {
+
+        background: #6b7280;
+    }
+
+    /* Operator buttons */
+    .btn.op { 
+        background: #10b981; /* Green */
+        box-shadow: 0 4px 0 #059669;
+    }
+    .btn.op:hover {
+        background: #059669;
+    }
+
+    /* Clear button (C) */
+    .btn.clear { 
+        background: #f59e0b; /* Amber */
+        box-shadow: 0 4px 0 #d97706;
+    }
+    .btn.clear:hover {
+        background: #d97706;
+    }
+
+    /* Equals button */
+
+    .btn.eq { 
+        background: #ef4444; /* Red */
+        box-shadow: 0 4px 0 #dc2626;
+        grid-column: span 2; /* Span two columns for the equals button */
+    }
+    .btn.eq:hover {
+        background: #dc2626;
+    }
+
+  </style>
+</head>
+<body>
+
+    <header>
+  <div class="container">
+    <h1 class="logo">Portfolio</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="Gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+
+</header>
+  <main class="portfolio-container">
+        
+        <section class="section-image">
+            <h2>My Portfolio</h2>
+           <div class="image-placeholder">
+                <img src="img/img123.jpg"
+     width="200px" height="200" 
+                <p>(Bachelor of Science in Information Technology)</p>
+            </div>
+        </section>
+
+        <section class="section-introduction">
+            <h2>Introduction</h2>
+            <div class="content-box">
+                
+                <p>
+                  My name is Juicelyn Bisquera, and I am an IT student.
+I am a hardworking and curious person who loves learning new things about technology.
+Studying IT is not easy, but I always try my best to understand each topic.
+Sometimes I face challenges with programming and projects, but I never give up.
+I enjoy solving problems and discovering how computers and systems work.
+Being an IT student teaches me patience, creativity, and critical thinking.
+I believe that with dedication and effort, I can become a successful someday.
+                  </p>
+            </div>
+        </section>
+
+        <section class="section-info">
+            <h2>Personal Information</h2>
+            <div class="content-box">
+               
+                
+                <h3>Personal Details</h3>
+                <ul>
+                    <li><strong>Full Name:</strong> Juicelyn Bisquera</li>
+
+                    <li><strong>Location:</strong> Ubbog Lipcan Bangued, Abra</li>
+                    <li><strong>Contact:</strong> bisquerajoyce30@gmail.com.com</li>
+                </ul>
+
+                <h3>Educational Background</h3>
+                <ul>
+                <li><strong>Primary School:</strong> Sinalang Pilot Elementary School</li>
+                <li><strong>Year Graduated:</strong> 2015-2016</li>
+                <li><strong>Secondary School:</strong> Abra High School</li>
+                <li><strong>Year Graduated:</strong> 2019-2020</li>
+                <li><strong>Tertiary School:</strong> Data Center College  of the Phillipines-Bangued</li>
+                <li><strong>Course:</strong> Bachelor of Science in Information Technology </li>
+                <li><strong>Year:</strong> 2025-2026</li>
+                    
+                </ul>
+            </div>
+        </section>
+         <main class="portfolio-container">
+        
+        <section class="section-image">
+            <h2>My Resume</h2>
+             <!-- Download Resume Button -->
+<a href="img/bisquera_resume.pdf" download class="download-btn">
+
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 20 20">
+    <path d="M10 0v12l4-4h-3V0h-2v8H6l4 4V0zM2 16h16v2H2v-2z"/>
+  </svg>
+  Download My Resume
+</a>
+
+           
+        </div>
+    </section>
+
+        </section>
+
+ 
+        </section>
+       
+        <section class="section-introduction">
+            <h2>Projects</h2>
+
+    <div class="about-container">
+    <div class="about-img">
+    <img src="img/ab.jpg" alt="">
+    </div>
+
+   
+    <div class="about-text">
+      <h1>Calculator</h1>
+     <!-- CARD PROJECT -->
+<div class="card">
+    <div class="card-header">
+        <span role="img" aria-label="Globe">🌐</span>
+    </div>
+
+    <div class="card-body">
+
+        <div class="category">WEB DEVELOPMENT</div>
+        <div class="title">Simple Calculator</div>
+        <div class="desc">A fully functional, modern-styled calculator implemented with vanilla JavaScript.</div>
+
+        <div class="footer">
+            <span>November 2024</span>
+            <span class="view-btn" onclick="showCalculator()">View Project →</span>
+        </div>
+    </div>
+</div>
+
+<!-- CALCULATOR -->
+<div id="calculator">
+    <div class="relative">
+        <!-- Display Field -->
+        <input type="text" id="display" 
+
+value="0" disabled>
+    </div>
+
+    <div class="buttons">
+        <!-- Row 1 -->
+        <button class="btn clear" onclick="clearDisplay()">C</button>
+        <button class="btn op" onclick="appendToDisplay('/')">/</button>
+        <button class="btn op" onclick="appendToDisplay('*')">x</button>
+        <button class="btn op" onclick="appendToDisplay('-')">-</button>
+        
+        <!-- Row 2 -->
+        <button class="btn num" onclick="appendToDisplay('7')">7</button>
+        <button class="btn num" onclick="appendToDisplay('8')">8</button>
+        <button class="btn num" onclick="appendToDisplay('9')">9</button>
+        <button class="btn op" onclick="appendToDisplay('+')">+</button>
+
+
+        <!-- Row 3 -->
+        <button class="btn num" onclick="appendToDisplay('4')">4</button>
+        <button class="btn num" onclick="appendToDisplay('5')">5</button>
+        <button class="btn num" onclick="appendToDisplay('6')">6</button>
+
+        <!-- Row 4 -->
+        <button class="btn num" onclick="appendToDisplay('1')">1</button>
+        <button class="btn num" onclick="appendToDisplay('2')">2</button>
+        <button class="btn num" onclick="appendToDisplay('3')">3</button>
+
+        <!-- Final Row -->
+        <button class="btn num" onclick="appendToDisplay('0')">0</button>
+        <button class="btn num" onclick="appendToDisplay('.')">.</button>
+
+        <button class="btn eq" onclick="calculate()">=</button>
+    </div>
+</div>
+
+<script>
+    // Get the display element once
+    const display = document.getElementById('display');
+
+    /**
+     * Shows the calculator and scrolls it into view.
+     */
+    function showCalculator() {
+        const calculator = document.getElementById('calculator');
+        calculator.style.display = 'grid'; // Use grid/block to show it
+        // Smoothly scroll down to the calculator
+        calculator.scrollIntoView({ behavior: 
+
+'smooth', block: 'start' });
+    }
+
+    /**
+     * Appends a value (number or operator) to the calculator display.
+     * @param {string} value The value to append.
+     */
+    function appendToDisplay(value) {
+        if (display.value === 'Error' || display.value === '0') {
+            // If starting after an error or if display is default 0, replace it
+            if (value !== '.') {
+                 display.value = value;
+            } else {
+                // If the first input is '.', keep the '0.'
+                display.value = '0.';
+            }
+        } else {
+
+            // Prevent consecutive operators, but allow negative sign at start or after another operator
+            const lastChar = display.value.slice(-1);
+            const isOperator = (char) => ['+', '-', '*', '/'].includes(char);
+
+            if (isOperator(lastChar) && isOperator(value) && value !== '-') {
+                // Replace the last operator if a new one is clicked (but allow multiple '-' for clarity)
+                if (value === lastChar) return; // Don't allow duplicates like ++
+                
+                // If the last character is an operator and the new value is an operator (excluding minus)
+                // we replace the last character.
+                display.value = display.value.slice(0, -1) + value;
+
+            } else if (value === '.' && lastChar === '.') {
+                // Prevent consecutive dots
+                return;
+            } else {
+                // Append the value
+                display.value += value;
+            }
+        }
+    }
+
+    /**
+     * Clears the calculator display.
+     */
+    function clearDisplay() {
+        display.value = '0';
+    }
+
+    /**
+     * Calculates the result of the expression on the display.
+     */
+
+    function calculate() {
+        try {
+            // Use Function constructor for safe evaluation, avoiding direct eval() when possible
+            // Note: This is still generally discouraged in production for user-input strings, 
+            // but is common for simple JS calculator projects.
+            const result = new Function('return ' + display.value)();
+
+            // Check if the result is valid
+            if (isNaN(result) || !isFinite(result)) {
+                throw new Error("Invalid expression");
+            }
+            
+            // Limit to 4 decimal places for clean display
+            display.value = 
+
+parseFloat(result.toFixed(4));
+        } catch (error) {
+            console.error("Calculation Error:", error);
+            // Show an error message on the display
+            display.value = 'Error';
+        }
+    }
+  
+</script>
+  
+  </script>
+</body>
+</html>
+
+
+
