@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="icon.png" type="image/x-icon">
+  <title>gallery</title>
+  <link rel="stylesheet" href="css/midterm.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+
+   #urvid {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  object-fit: cover;
+    }
+   body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f5f7fa;
+      color: #333;
+      scroll-behavior: smooth;
+   }
+    header {
+
+      background: #1e1e2f;
+      padding:25px 0;
+      position:sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .content {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      max-width: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      color: #f1f1f1;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: justify;
+    }
+
+    #pause_button {
+      width: 200px;
+      font-size: 18px;
+      padding: 10px;
+      border: none;
+      background: #000;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+    #pause_button:hover {
+      background: #ddd;
+      color: #000;
+    }
+* Title styling */
+.title-content {
+  text-align:right;
+  margin-top: 50px;
+}
+
+.title {
+  font-size: 60px;
+  font-family: Arial, sans-serif;
+  color:  #1e1e2f;
+  text-shadow: 2px 2px 8px rgb(71, 110, 227);
+  letter-spacing: 5px;
+  text-align: center;
+}
+
+/* Content section (marquee) */
+.content {
+
+  margin: 40px auto;
+  width: 90%;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.content img {
+  border-radius: 10px;
+  margin: 0 10px;
+  box-shadow: 2px 2px 10px black;
+  transition: transform 0.3s;
+}
+
+.content img:hover {
+  transform: scale(1.1);
+}
+
+
+/* Button styling */
+.button-container {
+  text-align:center;
+  margin: 20px;
+}
+
+    .scroll-container {
+      margin-top: 15px;
+      background-color: transparent;
+      overflow-x: auto;
+      white-space: nowrap;
+      padding: 5px;
+
+    }
+    .scroll-container img {
+      display: inline-block;
+      margin-right: 10px;
+      border-radius: 8px;
+    }
+    .container { width: 90%; max-width: 1100px; margin: auto; }
+    .logo { color: #fff; font-size: 1.8rem; margin: 0; }
+    nav { float: right; }
+    nav a {
+      color: #fff;
+      margin-left: 25px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+  </style>
+</head>
+<body>
+
+    <header>
+  <div class="container">
+    <h1 class="logo">My Gallery</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="Gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+
+</header>
+
+
+  <video autoplay muted loop id="urvid">
+    <source src="video.mp4" type="video/mp4">
+
+  </video>
+  <br><br>
+  <br>
+  <br>
+  <div class="title-content">
+          <h1 class="title">My Gallery</h1>
+  </div>
+  
+
+  <!-- Marquee Slideshow -->
+  <div class="content">
+    <marquee id="myMarquee" behavior="scroll" direction="left" scrollamount="5">
+      <img src="img/img1.jpg" height="200">
+      <img src="img/img2.jpg" height="200">
+      <img src="img/img3.jpg" height="200">
+      <img src="img/img4.jpg" height="200">
+      <img src="img/img5.jpg" height="200">
+      <img src="img/img1.jpg" height="200">
+      <img src="img/img2.jpg" height="200">
+      <img src="img/img3.jpg" height="200">
+      <img src="img/img4.jpg" height="200">
+      <img src="img/img5.jpg" height="200">
+      <img src="img/img1.jpg" height="200">
+    </marquee>
+  </div>
+
+    </div>
+  </div>
+
+  <script src="js/myvid.js"></script><script>
+    function myFunction() {
+  let video = document.getElementById("urvid");
+  let btn = document.getElementById("pause_button");
+
+  if (video.paused) {
+    video.play();
+    btn.innerText = "Pause";
+  } else {
+    video.pause();
+    btn.innerText = "Play";
+      }
+
+    }
+  </script>
+</body>
+</html>
